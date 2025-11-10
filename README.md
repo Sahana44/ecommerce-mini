@@ -190,3 +190,14 @@ All available through admin interface or API endpoints.
 3. Input validation and safe ORM queries
 
 4. .env file excluded via .gitignore
+
+
+### Deployment on Render
+1. Go to https://render.com
+2. Log in with your GitHub
+3. Click “New” → “Web Service”
+4. Choose this repo `ecommerce-mini`
+5. Fill form:
+   - **Environment**: Python
+   - **Build Command**: `pip install -r requirements.txt && python manage.py collectstatic --noinput`
+   - **Start Command**: `gunicorn backend.wsgi`
