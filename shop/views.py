@@ -77,7 +77,11 @@ def home_view(request):
     return JsonResponse({"message": "Welcome to the E-Commerce API"})
 
 def login_view(request):
-    return JsonResponse({"message": "Login API endpoint - use /api/accounts/login/"})
+    return render(request, 'login.html')
+
+    # return render(request, 'shop/login.html')
+
+    # return JsonResponse({"message": "Login API endpoint - use /api/accounts/login/"})
 
 def register_view(request):
     return JsonResponse({"message": "Register API endpoint - use /api/accounts/register/"})
