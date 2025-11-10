@@ -16,6 +16,8 @@ Including another URLconf
 """
 
 # backend/urls.py
+from shop import views
+
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -38,7 +40,13 @@ def home(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home_view, name='home'),
+    path('login/', views.login_view, name='login'),
+    path('register/', views.register_view, name='register'),
+    path('admin-dashboard/', views.admin_dashboard, name='admin_dashboard'),
 
+    path('admin/', admin.site.urls),
+    path('', include('shop.urls')),
     # include app urlconfs (these should define /api/token/ etc.)
     path('api/accounts/', include('accounts.urls')), 
     path('api/', include('users.urls')),
@@ -48,6 +56,8 @@ urlpatterns = [
     path('api/products/', include('products.urls')),
     path('api/orders/', include('orders.urls')),
     path('', home),
+    path('', include('shop.urls')),
+
 ]
 
 if settings.DEBUG:

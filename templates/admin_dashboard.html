@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Admin Dashboard</h3>
+<p>Manage products and orders here.</p>
+<a href="/admin/" class="btn btn-dark">Go to Django Admin Panel</a>
+{% endblock %}
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            margin: 30px auto;
+            width: 80%;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>🛍️ E-Commerce Admin Dashboard</h2>
+    </div>
+    <div class="container">
+        <h1>Welcome, {{ user.username }} 👋</h1>
+        <p>Here you can manage products, orders, and users.</p>
+
+        <h2>Orders Summary</h2>
+        <table>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.user.username }}</td>
+                <td>{{ order.status }}</td>
+                <td>{{ order.created_at }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="4">No orders found.</td></tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html> -->
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .stats {
+            display: flex;
+            gap: 20px;
+        }
+        .card {
+            flex: 1;
+            background: #007bff;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .orders {
+            margin-top: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+
+        <div class="stats">
+            <div class="card">
+                <h2>{{ total_products }}</h2>
+                <p>Total Products</p>
+            </div>
+            <div class="card">
+                <h2>{{ total_orders }}</h2>
+                <p>Total Orders</p>
+            </div>
+        </div>
+
+        <div class="orders">
+            <h2>Recent Orders</h2>
+            <table>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+                {% for order in recent_orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.customer }}</td>
+                    <td>{{ order.status }}</td>
+                    <td>{{ order.created_at|date:"Y-m-d H:i" }}</td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="4">No recent orders found.</td></tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .stats {
+            display: flex;
+            gap: 20px;
+        }
+        .card {
+            flex: 1;
+            background: #007bff;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .orders {
+            margin-top: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+
+        <div class="stats">
+            <div class="card">
+                <h2>{{ total_products }}</h2>
+                <p>Total Products</p>
+            </div>
+            <div class="card">
+                <h2>{{ total_orders }}</h2>
+                <p>Total Orders</p>
+            </div>
+        </div>
+
+        <div class="orders">
+            <h2>Recent Orders</h2>
+            <table>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+                {% for order in recent_orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.customer }}</td>
+                    <td>{{ order.status }}</td>
+                    <td>{{ order.created_at|date:"Y-m-d H:i" }}</td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="4">No recent orders found.</td></tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>
