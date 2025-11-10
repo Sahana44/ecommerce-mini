@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure--8zj4ur5kt5*l6585ox!t7#)8%tix%jp82sooss%!ckb3+^&+u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ecommerce-mini-hyot.onrender.com', '127.0.0.1', 'localhost']
+
+
 
 
 # Application definition
